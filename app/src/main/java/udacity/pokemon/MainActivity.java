@@ -68,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
             // Perform HTTP request to the URL and receive a JSON response back
             String jsonString = "";
             try {
-                // TODO: make a request to the URL
                 // HTTP request
                 jsonString = sh.makeHttpRequest(createdURL);
 
@@ -80,16 +79,16 @@ public class MainActivity extends AppCompatActivity {
 //            Log.e(TAG, "Response from url: " + jsonString);
             if (jsonString != null) {
                 try {
-                    //TODO: Create a new JSONObject
+                    // Create a new JSONObject
                     JSONObject baseJsonObject = new JSONObject(jsonString);
 
-                    // TODO: Get the JSON Array node and name it "pokemons"
+                    // Get the JSON Array node and name it "pokemons"
                     JSONArray pokemons = baseJsonObject.getJSONArray("pokemon");
 
 
                     // looping through all Contacts
                     for (int i = 0; i < pokemons.length(); i++) {
-                        //TODO: get the JSONObject and its three attributes
+                        // Get the JSONObject and its three attributes
                         JSONObject currentPokemon = pokemons.getJSONObject(i);
                         String name = currentPokemon.getString("name");
                         String id = currentPokemon.getString("id");
